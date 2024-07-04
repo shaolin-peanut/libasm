@@ -1,8 +1,7 @@
-global _start
+; .section .text
 
-_start:
-    mov rax, 0
-    jmp  exit
+global main
 
-exit:
+main:
+    mov rax, 42
     ret

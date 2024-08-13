@@ -23,3 +23,19 @@ Small project to learn assembly by re-coding a few functions of the libft (first
         - Registers
             - registers are in-cpu memory
         - Arithmetic and Logic Unit (ALU)
+## reference
+-  argument registers: rdi   rsi   rdx   r10   r8    r9 
+- data directives (size, define data, reserve data)
+    - bytes 1 = db = rb
+    - bytes 2 = dw = rw
+    - bytes 4 = dd = rd
+    - bytes 8 = dq = rq
+    - bytes 16 = dt = rt
+    - bytes 32 = dq = rq
+    - bytes 64 = dq = rq
+    - bytes 128 = dq = rq
+- htons by hand
+    - print hex value of a number
+    - swap bytes: 0x16D9 becomes 0xD916
+- run strace to debug easily
+    - strace ./a.out

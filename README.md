@@ -43,3 +43,8 @@ Small project to learn assembly by re-coding a few functions of the libft (first
     - nasm -f elf64 *.s
     - ld *.o
     - strace ./a.out
+- getting nasm defines
+    - create c file that imports includes you're interested in
+    - define nasm constants in nasm syntax `%define socket SYS_socket`
+    - sys/syscall.h gives you the syscall numbers corresponding to functio names
+    - run gcc -E -P constants.c > constants.txt to get the preprocessed output, including the nasm defines so you can copy paste them in the asm file

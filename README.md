@@ -39,3 +39,7 @@ Small project to learn assembly by re-coding a few functions of the libft (first
     - swap bytes: 0x16D9 becomes 0xD916
 - run strace to debug easily
     - strace ./a.out
+- compilation
+    - nasm -f elf64 *.s
+    - ld *.o
+    - strace ./a.out

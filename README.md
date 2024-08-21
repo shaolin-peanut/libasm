@@ -34,7 +34,7 @@ Small project to learn assembly by re-coding a few functions of the libft (first
     - bytes 32 = dq = rq
     - bytes 64 = dq = rq
     - bytes 128 = dq = rq
-- htons by hand
+- htons (host to network short) by hand. means changing the byte order  to network byte order, whatever that is
     - print hex value of a number
     - swap bytes: 0x16D9 becomes 0xD916
 - run strace to debug easily

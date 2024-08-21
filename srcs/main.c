@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <fcntl.h>
+#include <sys/types.h>
 
 extern int ft_strlen(char *s);
 extern char *ft_strcpy(char *dest, char *src);
 extern int ft_strcmp(char *s1, char *s2);
+extern int ft_write(int fd, char *buf, int count);
+extern int ft_read(int fd, char *buf, int count);
 
 //  test ft_strlen
 // test ft_strcpy
@@ -25,6 +29,13 @@ void test_ft_strcmp(void) {
     return;
 }
 
+void test_ft_read() {
+    int fd = open("test.txt", O_RDONLY);
+    char buffer[100];
+    int result = ft_read(fd, buffer, 100);
+    printf("Return value: %d, str: %s\n", result, buffer);
+    return;
+}
 
 int main() {
     int result = ft_strlen("hello");
@@ -33,5 +44,9 @@ int main() {
     char *strcpy_result = ft_strcpy(destination, "world");
     printf("destination: %s, strcpy_result: %s\n", destination, strcpy_result);
     test_ft_strcmp();
+    // write(1, "hello\n", 10);
+    int res = ft_write(1, "hello\n this should not be printed", 6);
+    test_ft_read();
+
     return 0;
 }

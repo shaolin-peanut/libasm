@@ -9,19 +9,18 @@ section .text
     extern __errno_location
 
 ft_strdup:
-    mov r12, rsi ; save source
+    mov r12, rdi ; save source
     call ft_strlen
     test rax, rax
-    je ret_err
+    jz ret_err
 
     mov rdi, rax ; put len in rdi, only param for malloc
     inc rdi ; add 1 for null temrinator
     call malloc wrt ..plt
-    mov r14, rax ; save dest
-    ; test rax, rax
-    jmp set_errno
+    test rax, rax
+    jz set_errno
 
-    mov rdi, r14 ; destination (malloc ptr)
+    mov rdi, rax ; destination (malloc ptr)
     mov rsi, r12 ; source
     call ft_strcpy
     ret

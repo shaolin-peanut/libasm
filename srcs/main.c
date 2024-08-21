@@ -136,17 +136,25 @@ void test_ft_read(void) {
 }
 
 void test_ft_strdup(void) {
+    errno = 0;
     printf("ft_strdup tests:\n");
     char str[] = "hello world";
     char *result = ft_strdup(str);
     printf("Duplicated string: %s\n", result);
     free(result);
+    if (errno != 0) {
+        perror("ft_strdup");
+    }
+
+    errno = 0;
 
     char str2[] = "";
     result = ft_strdup(str2);
     printf("Duplicated empty string: %s\n", result);
-    free(result);
     printf("\n");
+    if (errno != 0) {
+        perror("ft_strdup");
+    }
 }
 
 int main(void) {

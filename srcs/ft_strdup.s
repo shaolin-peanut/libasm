@@ -32,5 +32,5 @@ ret_err:
 set_errno:
     mov rdi, ENOMEM
     call __errno_location wrt ..plt
-    mov [rax], rdi; ENOMEM
+    mov [rax], rdi;
     jmp ret_err

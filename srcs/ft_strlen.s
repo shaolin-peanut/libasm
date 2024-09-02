@@ -2,10 +2,10 @@ section .text
     global ft_strlen
 
 ft_strlen:
-    mov rsi, rdi
-    mov rcx, 0 ; iterator
     test rdi, rdi
     jz loop_end
+    mov rsi, rdi
+    mov rcx, 0 ; iterator
 loop_start:
     mov al, [rsi] ; load first byte of rsi into al
     inc rsi ; increment rsi pointer

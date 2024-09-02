@@ -13,59 +13,6 @@ extern ssize_t ft_write(int fd, const void *buf, size_t count);
 extern ssize_t ft_read(int fd, void *buf, size_t count);
 extern char *ft_strdup(const char *s);
 
-void test_ft_strlen(void) {
-    printf("ft_strlen tests:\n");
-    int result = ft_strlen("hello");
-    printf("ft_strlen('hello') should be 5: %d\n", result);
-    result = ft_strlen("");
-    printf("ft_strlen('') should be 0: %d\n", result);
-    result = ft_strlen(NULL);
-    printf("ft_strlen(NULL) should be 0: %d\n", result);
-    result = ft_strlen("hello world");
-    printf("ft_strlen('hello world') should be 11: %d\n", result);
-    printf("\n");
-}
-
-void test_ft_strcmp(void) {
-    printf("ft_strcmp tests:\n");
-    char s1[] = "hello";
-    char s2[] = "hello";
-    int result = ft_strcmp(s1, s2);
-    printf("Equal strings: %d (Expected: 0)\n", result);
-    s2[0] = 'j';
-    result = ft_strcmp(s1, s2);
-    printf("s1 < s2: %d (Expected: <0)\n", result);
-    s1[0] = 'j';
-    s2[0] = 'h';
-    result = ft_strcmp(s1, s2);
-    printf("s1 > s2: %d (Expected: >0)\n\n", result);
-}
-
-void test_ft_strcpy(void) {
-    printf("ft_strcpy tests:\n");
-    
-    char dest1[100];
-    char *src1 = "hello";
-    ft_strcpy(dest1, src1);
-    printf("Copy 'hello': %s\n", dest1);
-
-    char dest2[100];
-    char *src2 = "";
-    ft_strcpy(dest2, src2);
-    printf("Copy empty string: '%s'\n", dest2);
-
-    char dest3[100];
-    char *src3 = "A long string with spaces and symbols! @#$%^&*()";
-    ft_strcpy(dest3, src3);
-    printf("Copy long string: %s\n", dest3);
-
-    char dest4[10];
-    char *src4 = "overflow";
-    ft_strcpy(dest4, src4);
-    printf("Copy to smaller buffer (unsafe, for testing): %s\n", dest4);
-    printf("\n");
-}
-
 void test_ft_write(void) {
     printf("ft_write tests:\n");
     
@@ -158,9 +105,6 @@ void test_ft_strdup(void) {
 }
 
 int main(void) {
-    test_ft_strlen();
-    test_ft_strcpy();
-    test_ft_strcmp();
     test_ft_write();
     test_ft_read();
     test_ft_strdup();

@@ -10,9 +10,9 @@ section .text
 
 ft_strdup:
     mov r12, rdi ; save source
-    call ft_strlen
-    test rax, rax
+    test rdi, rdi
     jz ret_err
+    call ft_strlen
 
     mov rdi, rax ; put len in rdi, only param for malloc
     inc rdi ; add 1 for null temrinator

@@ -25,7 +25,7 @@ Small project to learn assembly by re-coding a few functions of the libft (first
         - Arithmetic and Logic Unit (ALU)
 ## reference
 -  argument registers: rdi   rsi   rdx   r10   r8    r9 
-- data directives (size, define data, reserve data)
+- data (size, define data, reserve data)
     - bytes 1 = db = rb
     - bytes 2 = dw = rw
     - bytes 4 = dd = rd

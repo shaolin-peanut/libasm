@@ -2,7 +2,7 @@ SRCDIR = srcs
 
 OBJDIR = objects
 
-LIBNAME = libasm.a
+NAME = libasm.a
 
 SOURCES = $(wildcard $(SRCDIR)/*.s)
 
@@ -12,25 +12,20 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.s
 	mkdir -p $(OBJDIR)
 	nasm -f elf64 $< -o $@
 
-$(LIBNAME): $(OBJECTS)
+$(NAME): $(OBJECTS)
 	ar rcs $@ $^
 
-all: $(LIBNAME)
+all: $(NAME)
 
 clean:
 	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(LIBNAME) main
+	rm -f $(NAME) main
 
 re: fclean all
 
-distclean: clean
-	rm -f $(LIBNAME)
-
-constants:
-	gcc -E -P bonus/constants.c > constants.txt
-
 test: all
-	gcc -o main srcs/main.c $(LIBNAME)
-	./main
+	gcc -o main srcs/main.c $(NAME)
+	gcc -o main2 srcs/main2.c $(NAME)
+	./main && ./main2

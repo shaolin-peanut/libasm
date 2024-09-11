@@ -82,15 +82,15 @@ void test_comparisons() {
     compare_strings("ft_strcpy", dest4, dest5, dest5);
 
     // ==== ft_strcmp ====
-    intret = strcmp(test_str1, test_str1); // same stuff
+    intret = ft_strcmp(test_str1, test_str1); // same stuff
     intret_std = strcmp(test_str1, test_str1);
     compare_results("strcmp", test_str1, intret_std, intret);
     
-    intret = strcmp(test_str1, test_str2); // "Hello world!" vs "12345"
+    intret = ft_strcmp(test_str1, test_str2); // "Hello world!" vs "12345"
     intret_std = strcmp(test_str1, test_str2);
     compare_results("strcmp", test_str2, intret_std, intret);
 
-    intret = strcmp(test_str2, test_str1); // "12345" vs "Hello world!"
+    intret = ft_strcmp(test_str2, test_str1); // "12345" vs "Hello world!"
     intret_std = strcmp(test_str2, test_str1);
     compare_results("strcmp", test_str1, intret_std, intret);
 

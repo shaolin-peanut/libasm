@@ -21,6 +21,5 @@ loop_end:
     ; s1 = 0, s2 = 'a' => return -1
     ; s1 = 'a', s2 = 0 => return 1
     sub al, bl
-    movzx rax, al 
+    movsx rax, al 
     ret
-    

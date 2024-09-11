@@ -3,6 +3,7 @@ SRCDIR = srcs
 OBJDIR = objects
 
 NAME = libasm.a
+TESTNAME = runtest
 
 SOURCES = $(wildcard $(SRCDIR)/*.s)
 
@@ -21,11 +22,10 @@ clean:
 	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME) main
+	rm -f $(NAME) $(TESTNAME) 
 
 re: fclean all
 
 test: all
-	gcc -o main srcs/main.c $(NAME)
-	gcc -o main2 srcs/main2.c $(NAME)
-	./main && ./main2
+	gcc -o runtest srcs/main.c $(NAME)
+	./$(TESTNAME)

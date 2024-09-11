@@ -14,5 +14,5 @@ loop_start:
     inc rcx ; else, increment rcx by 1
     jmp loop_start ; and jump back to loop_start
 loop_end:
-    mov rax, rcx ; move rcx into rax
+    mov rax, rcx ; move rcx (counter) into rax
     ret

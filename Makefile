@@ -27,5 +27,5 @@ fclean: clean
 re: fclean all
 
 test: all
-	gcc -o runtest srcs/main.c $(NAME)
+	gcc -o runtest srcs/main.c -L. -lasm 
 	./$(TESTNAME)
